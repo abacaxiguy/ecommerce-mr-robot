@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thefilters %}
+{% block title %}
+Detalhes do {{pedido}} - E-commerce Mr Robot
+{% endblock title %}
+{% block conteudo %}
+
+
+
+{% include 'parciais/_order.html' %}
+<br><br><br><br>
+
+{% endblock conteudo %}

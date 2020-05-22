@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body style="min-height:800px;">
+    {% include 'parciais/_nav.html' %}
+
+    <main class="container mt-4 mb-4">
+        {% include 'parciais/_messages.html' %}
+        {% block conteudo %}{% endblock conteudo %}
+    </main>
+
+    {% include 'parciais/_footer.html' %}
+</body>
+
+
+</html>

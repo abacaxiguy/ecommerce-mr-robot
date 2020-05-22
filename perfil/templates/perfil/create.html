@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Login - E-commerce Mr Robot {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block conteudo %}
+
+
+<div class="row">
+    {% if not request.user.is_authenticated%}
+    <div class="col-lg mt-3 mr-5">
+        <h4>Login</h4>
+        <p>Já tem uma conta? Preencha com seus dados para entrar.</p>
+
+        <form method="POST" action="{% url 'profile:login'%}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="Usuario1">Usuário</label>
+                <input name="username" type="text" class="form-control" id="Usuario1" aria-describedby="UsuarioHelp"
+                    placeholder="Digite seu usuário">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1"
+                    placeholder="Digite sua senha">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg mb-5">Entrar</button>
+        </form>
+
+    </div>
+    {% endif %}
+
+
+    <div class=" col-lg mt-3">
+        {% block tituloo_cadastro %}
+        <h4>Cadastro</h4>
+        <p class="mb-4">Não tem uma conta? Crie uma agora.</p>
+        {% endblock %}
+        <form method='POST' action="">
+            {% csrf_token %}
+            {{userform|crispy}}
+            {{perfilform|crispy}}
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg mb-5 mt-4">
+                        {% block botao %}Cadastrar-se{% endblock %}
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+{% endblock conteudo %}

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load thefilters %}
+{% block title %}
+Resumo da compra - E-commerce Mr Robot
+{% endblock title %}
+
+{% block conteudo %}
+<div class="row mb-5">
+    <div class="col-lg">
+        <h2>Resumo da sua compra</h2>
+
+        <p class="h4 mt-5">Dados do usuário</p>
+        <p style="margin-top:0px !important;">Caso precise editar, <a href="{% url 'profile:create' %}">clique aqui</a></p>
+        <dl class="row mt-5">
+            <dt class="col-lg-2">Nome:</dt>
+            <dd class="col-lg-4">{{usuario.first_name}}</dd>
+            <dt class="col-lg-2">Sobrenome:</dt>
+            <dd class="col-lg-4">{{usuario.last_name}}</dd>
+
+            <dt class="col-lg-2">Idade:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.age}}</dd>
+            <dt class="col-lg-2">Nascimento:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.birth_date}}</dd>
+
+            <dt class="col-lg-2">CPF:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.cpf}}</dd>
+            <dt class="col-lg-2">E-mail:</dt>
+            <dd class="col-lg-4">{{usuario.email}}</dd>
+        </dl>
+        <p class="h4 mt-5">Dados de endereço</p>
+        <p>Caso precise editar, <a href={% url 'profile:create' %}>clique aqui</a></p>
+        <dl class="row mt-5">
+            <dt class="col-lg-2">Endereço:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.address}}</dd>
+            <dt class="col-lg-2">Número:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.number}}</dd>
+
+            <dt class="col-lg-2">Complemento:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.complement}}</dd>
+            <dt class="col-lg-2">Cidade:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.neighborhood}}</dd>
+
+            <dt class="col-lg-2">Cidade:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.city}}</dd>
+            <dt class="col-lg-2">Estado:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.state}}</dd>
+
+            <dt class="col-lg-2">CEP:</dt>
+            <dd class="col-lg-4">{{usuario.perfil.cep}}</dd>
+        </dl>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col">
+        <h3>Resumo do carrinho</h3>
+        <p class="lead">Os produtos, quantidades e preços que você escolheu.</p>
+
+        {% include 'parciais/_cart.html' %}
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+
+        <div class="col-lg">
+            <p class='lead'>Total no carrinho</p>
+
+            <div class='table-responsive'>
+                <table class="table">
+                    <tr>
+                        <td class="font-weight-bold">Total</td>
+                        <td class="font-weight-bold">{{request.session.cart|soma_total|formata_preco}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <a class="btn btn-block btn-primary btn-lg" href="{% url 'order:finish' %}">
+            Realizar pedido e pagar
+        </a>
+    </div>
+</div>
+
+{% endblock conteudo %}

@@ -1,0 +1,65 @@
+{% load thefilters %}
+{% load static %}
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <div class="container" style="font-size:20px;">
+        <a class="navbar-brand pl-1" style="font-size:26px;" href="{% url 'product:list' %}">E-Commerce
+            <img style="max-height: 95px;margin-left: -5%;" src="{% static 'icon/mr_robo.png'%}">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active mr-2">
+                    <a class="nav-link" href="{% url 'product:list' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+
+                {% if request.user.is_authenticated %}
+                <li class="nav-item dropdown active mr-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Minha Conta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'profile:create' %}">Atualizar meus dados</a>
+                        <a class="dropdown-item" href="{% url 'order:lists' %}">Meus Pedidos</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'profile:logout' %}">Sair</a>
+                    </div>
+                </li>
+                {% else %}
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'profile:create' %}">Entrar / Criar conta</a>
+                </li>
+
+                {% endif %}
+
+                <li class="nav-item mr-3">
+                    <a class="nav-link nav-cart-link active" href="{% url 'product:cart'%}">
+                        <span class="nav-cart-text mr-1">
+                            Carrinho
+                        </span>
+                        {% if request.session.cart %}
+                        <span class="nav-cart-count mr-1">
+                            <strong>{{ request.session.cart|soma_qtd}}x</strong>
+                        </span>
+                        {% endif %}
+                        <span class="nav-cart-icon mr-2">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'product:search'  %}">
+                <input name="termo" value="{{request.GET.termo}}" class="form-control mr-sm-2" type="search"
+                    placeholder="Pesquisar..." aria-label="Buscar">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+</nav>
