@@ -1,18 +1,23 @@
-<h1 align="center">Ecommerce Mr Robot 🕴</h1>
+<div align="center">
+ <img alt="Ecommerce Mr Robot Logo" src="./static/icon/mr_robo.png" height="250" /> 
+ <h1>Ecommerce Mr Robot</h1>
 
-<p align="center">
- <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
- <img alt="Version" src="https://img.shields.io/github/commits-since/abacaxiguy/ecommerce-mr-robot/v0.1.0.svg" />
- <img alt="Version" src="https://img.shields.io/github/followers/abacaxiguy.svg?style=social&label=Follow&maxAge=2592000" />
-</p>
-<h3 align="center">The e-commerce of all hackers 👨‍💻</h3>
-<br>
-<p align="center">
-  <img src="./screenshots/Screenshot_6.png"/>
-  <img src="./screenshots/Screenshot_7.png"/>
-  <img src="./screenshots/Screenshot_8.png"/>
-  <img src="./screenshots/Screenshot_9.png"/>
-</p>
+ <p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/github/commits-since/abacaxiguy/ecommerce-mr-robot/v0.1.0.svg" />
+  <img alt="Version" src="https://img.shields.io/github/followers/abacaxiguy.svg?style=social&label=Follow&maxAge=2592000" />
+ </p>
+ 
+ <h2>The e-commerce of all hackers 👨‍💻</h2>
+ 
+ <p>
+   <img src="./screenshots/Screenshot_6.png"/>
+   <img src="./screenshots/Screenshot_7.png"/>
+   <img src="./screenshots/Screenshot_8.png"/>
+   <img src="./screenshots/Screenshot_9.png"/>
+ </p>
+
+</div>
 
 ---
 
