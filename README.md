@@ -1,14 +1,16 @@
 <div align="center">
  <img alt="Ecommerce Mr Robot Logo" src="./static/icon/mr_robo.png" height="250" /> 
- <h1>Ecommerce Mr Robot</h1>
+ 
+ # 🛒 E-commerce Mr Robot, the e-commerce of all hackers 👨‍💻
 
  <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <img alt="Version" src="https://img.shields.io/github/commits-since/abacaxiguy/ecommerce-mr-robot/v0.1.0.svg" />
   <img alt="Version" src="https://img.shields.io/github/followers/abacaxiguy.svg?style=social&label=Follow&maxAge=2592000" />
  </p>
- 
- <h3>The e-commerce of all hackers 👨‍💻</h3>
+
+ <br>
+
  <p>
    <img src="./screenshots/Screenshot_6.png" width="91%"/>
    <img src="./screenshots/Screenshot_7.png" width="45%"/>
@@ -38,9 +40,17 @@ python -m venv venv
 With the venv set, you need to install the [dependencies.txt](/dependencies.txt):
 
 ```bat
+# On windows:
+
 call venv/Scripts/activate.bat
 pip install -r dependencies.txt
-call venv/Scripts/deactivate.bat
+```
+
+```bash	
+# On linux:
+
+source venv/bin/activate
+pip install -r dependencies.txt
 ```
 
 After installing the dependencies, just run `python manage.py runserver`
@@ -51,14 +61,14 @@ After installing the dependencies, just run `python manage.py runserver`
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/abacaxiguy/antiprocrastinator/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/abacaxiguy/ecommerce-mr-robot/issues).
 
 ---
 
 ## 📋 Tested in
 
--   Windows 10 (Chrome 1600x900)
--   Ubuntu (WSL2)
+-   Windows 10 (Chrome 1600x900) ✔
+-   Ubuntu (WSL2) ✔
 
 ---
 
