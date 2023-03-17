@@ -23,7 +23,9 @@
 
 ---
 
-## 🤔 How to run locally
+## 🤔 Usage
+
+<b>⚠ warning! the website is in portuguese (pt-br), and it will probably stay this way ⚠</b>
 
 If you want to run it locally:
 
